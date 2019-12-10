@@ -1,4 +1,4 @@
-package com.unicon.api.serviceapiobra;
+package com.unicon.api.obra;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.unicon.api.serviceapiobra;
+package com.unicon.api.obra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

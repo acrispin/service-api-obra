@@ -1,7 +1,7 @@
-package com.unicon.api.serviceapiobra.controller;
+package com.unicon.api.obra.controller;
 
-import com.unicon.api.serviceapiobra.beans.ObraBean;
-import com.unicon.api.serviceapiobra.beans.ResponseBean;
+import com.unicon.api.obra.beans.ObraBean;
+import com.unicon.api.obra.beans.ResponseBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

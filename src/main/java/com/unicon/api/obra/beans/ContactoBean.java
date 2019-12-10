@@ -1,4 +1,4 @@
-package com.unicon.api.serviceapiobra.beans;
+package com.unicon.api.obra.beans;
 
 import java.io.Serializable;
 

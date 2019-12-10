@@ -1,4 +1,4 @@
-package com.unicon.api.serviceapiobra;
+package com.unicon.api.obra;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
