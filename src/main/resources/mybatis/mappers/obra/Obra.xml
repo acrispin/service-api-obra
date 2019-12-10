@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unicon.api.obra.mapper.IObraMapper">
+
+    <!--@since 20191210 ACRISPIN | Mapper para obras-->
+    <resultMap id="selectResultTypeObraMap" type="com.unicon.api.obra.beans.ResponseObraBean">
+        <result property="estado" column="status"/>
+        <result property="codigo" column="codigo"/>
+        <result property="resultado" column="resultado"/>
+        <result property="mensaje" column="mensaje"/>
+        <result property="cuadrante" column="cuadrante"/>
+    </resultMap>
+
+    <!--@since 20191210 ACRISPIN | Mapper para obras-->
+    <select id="registrarObra"
+            parameterType="java.util.Map"
+            resultMap="selectResultTypeObraMap">
+        EXEC [api].[usp_registra_obra]
+            @p_co_obr = #{codigo},
+            @p_no_obr = #{nombre},
+            @p_di_obr = #{direccion},
+            @p_co_pos = #{codigoPostal},
+            @p_ti_cal = #{tipoCalle},
+            @p_nu_cal = #{numeroCalle},
+            @p_no_urb = #{nombreUrbanizacion},
+            @p_vo_apx = #{volumenAprox},
+            @p_ref_di = #{referenciaDireccion},
+            @p_tlfn = #{telefono},
+            @p_vo_ini = #{volumenInicial},
+            @p_map_page = #{cuadrante},
+            @p_nu_pis = #{pisos},
+            @p_lat = #{latitud},
+            @p_lon = #{longitud},
+            @p_un_neg = #{unidadNegocio},
+            @p_co_ume = #{unidadMedida},
+            @p_du_obr = #{duracion},
+            @p_se_tob = #{tipo},
+            @p_pro_obr = #{propietario},
+            @p_co_ext = #{codigoExterno}
+    </select>
+
+    <!--@since 20191210 ACRISPIN | Mapper para obras-->
+    <resultMap id="selectResultTypeObraContactoMap" type="com.unicon.api.obra.beans.ResponseContactoBean">
+        <result property="codigoObra" column="codigoObra"/>
+        <result property="secuencia" column="secuencia"/>
+        <result property="codigoUsuario" column="codigoUsuario"/>
+        <result property="estado" column="status"/>
+        <result property="resultado" column="resultado"/>
+        <result property="mensaje" column="mensaje"/>
+    </resultMap>
+
+    <!--@since 20191210 ACRISPIN | Mapper para obras-->
+    <select id="registrarObraContacto"
+            parameterType="java.util.Map"
+            resultMap="selectResultTypeObraContactoMap">
+        EXEC [api].[usp_registra_obra_contacto]
+            @p_se_cob = #{secuencia},
+            @p_co_obr = #{codigoObra},
+            @p_nombre = #{nombre},
+            @p_cargo = #{cargo},
+            @p_tl = #{telefono},
+            @p_tl2 = #{telefono2},
+            @p_email = #{email},
+            @p_dni = #{dni},
+            @p_in_sup = #{indiceSupervisor},
+            @p_aplld = #{apellido},
+            @p_co_ext = #{codigoExterno},
+            @p_es_cob = #{estado},
+            @p_co_usu = #{codigoUsuario}
+    </select>
+
+    <!--@since 20191210 ACRISPIN | Mapper para obras-->
+    <resultMap id="selectResultTypeObraFrenteMap" type="com.unicon.api.obra.beans.ResponseObraBean">
+        <result property="estado" column="status"/>
+        <result property="id" column="idFrente"/>
+        <result property="resultado" column="resultado"/>
+        <result property="mensaje" column="mensaje"/>
+        <result property="cuadrante" column="cuadrante"/>
+    </resultMap>
+
+    <!--@since 20191210 ACRISPIN | Mapper para obras-->
+    <select id="registrarObraFrente"
+            parameterType="java.util.Map"
+            resultMap="selectResultTypeObraFrenteMap">
+        EXEC [api].[usp_registra_obra_frente]
+            @p_id_frnt = #{idFrente},
+            @p_co_obr = #{codigoObra},
+            @p_co_ext = #{codigoExterno},
+            @p_de_frnt = #{descripcionFrente},
+            @p_ti_cal = #{tipoCalle},
+            @p_di_frnt = #{direccionFrente},
+            @p_no_urb = #{nombreUrbanizacion},
+            @p_nu_cal = #{numeroCalle},
+            @p_co_pos = #{codigoPostal},
+            @p_ref = #{referencia},
+            @p_lat = #{latitud},
+            @p_lon = #{longitud},
+            @p_cuadrante = #{cuadrante},
+            @p_co_pta = #{codigoPlanta},
+            @p_vol = #{volumen},
+            @p_co_ume = #{unidadMedida}
+    </select>
+
+</mapper>

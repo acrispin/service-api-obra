@@ -3,8 +3,10 @@ package com.unicon.api.obra.controller;
 
 import com.unicon.api.obra.beans.FrenteBean;
 import com.unicon.api.obra.beans.ResponseBean;
+import com.unicon.api.obra.service.IObraService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,9 @@ import java.util.List;
 public class FrenteController {
 
     private static Logger log = LoggerFactory.getLogger(FrenteController.class);
+
+    @Autowired
+    public IObraService obraService;
 
     @GetMapping("")
     public List<FrenteBean> getFrentes() {
@@ -32,26 +37,14 @@ public class FrenteController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseBean crear(@RequestBody FrenteBean frente) {
         log.info("crear frente: " + frente);
-        ResponseBean response = new ResponseBean();
-        response.setId(34);
-        response.setEstado(ResponseBean.STATUS_CREADO);
-        response.setCodigo(null);
-        response.setMensaje("OK");
-        response.setResultado(true);
-        return response;
+        return obraService.crearObraFrente(frente);
     }
 
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
     public ResponseBean actualizar(@RequestBody FrenteBean frente) {
         log.info("actualizar frente: " + frente);
-        ResponseBean response = new ResponseBean();
-        response.setId(34);
-        response.setEstado(ResponseBean.STATUS_MODIFICADO);
-        response.setCodigo(null);
-        response.setMensaje("OK");
-        response.setResultado(true);
-        return response;
+        return obraService.actualizarObraFrente(frente);
     }
 
 }

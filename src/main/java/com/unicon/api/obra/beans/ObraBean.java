@@ -20,9 +20,13 @@ public class ObraBean implements Serializable {
     protected Double volumenInicial;
     protected String cuadrante;
     protected Integer pisos;
-    protected Double longitud;
     protected Double latitud;
-    protected String codigoPlanta;
+    protected Double longitud;
+    protected String unidadNegocio;
+    protected String unidadMedida;
+    protected Double duracion;
+    protected Integer tipo;
+    protected String propietario;
     protected String codigoExterno;
 
     public ObraBean() {
@@ -55,7 +59,11 @@ public class ObraBean implements Serializable {
                 ", pisos=" + pisos +
                 ", longitud=" + longitud +
                 ", latitud=" + latitud +
-                ", codigoPlanta='" + codigoPlanta + '\'' +
+                ", unidadNegocio='" + unidadNegocio + '\'' +
+                ", unidadMedida='" + unidadMedida + '\'' +
+                ", duracion=" + duracion +
+                ", tipo=" + tipo +
+                ", propietario='" + propietario + '\'' +
                 ", codigoExterno='" + codigoExterno + '\'' +
                 '}';
     }
@@ -188,19 +196,51 @@ public class ObraBean implements Serializable {
         this.latitud = latitud;
     }
 
-    public String getCodigoPlanta() {
-        return codigoPlanta;
-    }
-
-    public void setCodigoPlanta(String codigoPlanta) {
-        this.codigoPlanta = codigoPlanta;
-    }
-
     public String getCodigoExterno() {
         return codigoExterno;
     }
 
     public void setCodigoExterno(String codigoExterno) {
         this.codigoExterno = codigoExterno;
+    }
+
+    public String getUnidadNegocio() {
+        return unidadNegocio;
+    }
+
+    public void setUnidadNegocio(String unidadNegocio) {
+        this.unidadNegocio = unidadNegocio;
+    }
+
+    public String getUnidadMedida() {
+        return unidadMedida;
+    }
+
+    public void setUnidadMedida(String unidadMedida) {
+        this.unidadMedida = unidadMedida;
+    }
+
+    public Double getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(Double duracion) {
+        this.duracion = duracion;
+    }
+
+    public Integer getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Integer tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(String propietario) {
+        this.propietario = propietario;
     }
 }

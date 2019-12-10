@@ -2,10 +2,18 @@ package com.unicon.api.obra.controller;
 
 import com.unicon.api.obra.beans.ObraBean;
 import com.unicon.api.obra.beans.ResponseBean;
+import com.unicon.api.obra.service.IObraService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +24,9 @@ import java.util.List;
 public class ObraController {
 
     private static Logger log = LoggerFactory.getLogger(ObraController.class);
+
+    @Autowired
+    public IObraService obraService;
 
     @GetMapping("")
     public List<ObraBean> getObras() {
@@ -32,26 +43,14 @@ public class ObraController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseBean crear(@RequestBody ObraBean obra) {
         log.info("crear obra: " + obra.toString());
-        ResponseBean response = new ResponseBean();
-        response.setId(0);
-        response.setEstado(ResponseBean.STATUS_CREADO);
-        response.setCodigo("PO16");
-        response.setMensaje("OK");
-        response.setResultado(true);
-        return response;
+        return obraService.crearObra(obra);
     }
 
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
     public ResponseBean actualizar(@RequestBody ObraBean obra) {
         log.info("actualizar obra: " + obra.toString());
-        ResponseBean response = new ResponseBean();
-        response.setId(0);
-        response.setEstado(ResponseBean.STATUS_MODIFICADO);
-        response.setCodigo("PO16");
-        response.setMensaje("OK");
-        response.setResultado(true);
-        return response;
+        return obraService.actualizarObra(obra);
     }
 
 }

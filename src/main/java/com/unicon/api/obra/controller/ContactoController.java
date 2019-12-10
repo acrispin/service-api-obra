@@ -1,10 +1,11 @@
 package com.unicon.api.obra.controller;
 
 import com.unicon.api.obra.beans.ContactoBean;
-import com.unicon.api.obra.beans.ResponseBean;
 import com.unicon.api.obra.beans.ResponseContactoBean;
+import com.unicon.api.obra.service.IObraService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,9 @@ import java.util.List;
 public class ContactoController {
 
     private static Logger log = LoggerFactory.getLogger(ContactoController.class);
+
+    @Autowired
+    public IObraService obraService;
 
     @GetMapping("")
     public List<ContactoBean> getContactos() {
@@ -32,31 +36,13 @@ public class ContactoController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseContactoBean crear(@RequestBody ContactoBean contacto) {
         log.info("crear contacto: " + contacto.toString());
-        ResponseContactoBean response = new ResponseContactoBean();
-        response.setCodigo(null);
-        response.setId(null);
-        response.setCodigoObra("KT17");
-        response.setSecuencia("01");
-        response.setCodigoUsuario(1234);
-        response.setEstado(ResponseBean.STATUS_CREADO);
-        response.setMensaje("OK");
-        response.setResultado(true);
-        return response;
+        return obraService.crearObraContacto(contacto);
     }
 
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
     public ResponseContactoBean actualizar(@RequestBody ContactoBean contacto) {
         log.info("actualizar contacto: " + contacto.toString());
-        ResponseContactoBean response = new ResponseContactoBean();
-        response.setCodigo(null);
-        response.setId(null);
-        response.setCodigoObra("KT17");
-        response.setSecuencia("01");
-        response.setCodigoUsuario(1234);
-        response.setEstado(ResponseBean.STATUS_MODIFICADO);
-        response.setMensaje("OK");
-        response.setResultado(true);
-        return response;
+        return obraService.actualizarObraContacto(contacto);
     }
 }
