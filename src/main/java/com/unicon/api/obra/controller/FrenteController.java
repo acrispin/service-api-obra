@@ -2,7 +2,6 @@ package com.unicon.api.obra.controller;
 
 import com.unicon.api.commons.beans.obra.ObraFrenteBean;
 import com.unicon.api.commons.beans.obra.ResponseObraBean;
-import com.unicon.api.commons.beans.response.ResponseBean;
 import com.unicon.api.obra.service.IObraService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
