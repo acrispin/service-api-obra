@@ -1,7 +1,8 @@
 package com.unicon.api.obra.controller;
 
-import com.unicon.api.obra.beans.ObraBean;
-import com.unicon.api.obra.beans.ResponseBean;
+import com.unicon.api.commons.beans.obra.ObraBean;
+import com.unicon.api.commons.beans.obra.ResponseObraBean;
+import com.unicon.api.commons.beans.response.ResponseBean;
 import com.unicon.api.obra.service.IObraService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,14 +42,14 @@ public class ObraController {
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseBean crear(@RequestBody ObraBean obra) {
+    public ResponseObraBean crear(@RequestBody ObraBean obra) {
         log.info("crear obra: " + obra.toString());
         return obraService.crearObra(obra);
     }
 
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseBean actualizar(@RequestBody ObraBean obra) {
+    public ResponseObraBean actualizar(@RequestBody ObraBean obra) {
         log.info("actualizar obra: " + obra.toString());
         return obraService.actualizarObra(obra);
     }

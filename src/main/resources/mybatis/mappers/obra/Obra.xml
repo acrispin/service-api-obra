@@ -3,7 +3,7 @@
 <mapper namespace="com.unicon.api.obra.mapper.IObraMapper">
 
     <!--@since 20191210 ACRISPIN | Mapper para obras-->
-    <resultMap id="selectResultTypeObraMap" type="com.unicon.api.obra.beans.ResponseObraBean">
+    <resultMap id="selectResultTypeObraMap" type="com.unicon.api.commons.beans.response.ResponseObraBean">
         <result property="estado" column="status"/>
         <result property="codigo" column="codigo"/>
         <result property="resultado" column="resultado"/>
@@ -40,7 +40,7 @@
     </select>
 
     <!--@since 20191210 ACRISPIN | Mapper para obras-->
-    <resultMap id="selectResultTypeObraContactoMap" type="com.unicon.api.obra.beans.ResponseContactoBean">
+    <resultMap id="selectResultTypeObraContactoMap" type="com.unicon.api.commons.beans.obra.ResponseObraContactoBean">
         <result property="codigoObra" column="codigoObra"/>
         <result property="secuencia" column="secuencia"/>
         <result property="codigoUsuario" column="codigoUsuario"/>
@@ -70,7 +70,7 @@
     </select>
 
     <!--@since 20191210 ACRISPIN | Mapper para obras-->
-    <resultMap id="selectResultTypeObraFrenteMap" type="com.unicon.api.obra.beans.ResponseObraBean">
+    <resultMap id="selectResultTypeObraFrenteMap" type="com.unicon.api.commons.beans.obra.ResponseObraBean">
         <result property="estado" column="status"/>
         <result property="id" column="idFrente"/>
         <result property="resultado" column="resultado"/>

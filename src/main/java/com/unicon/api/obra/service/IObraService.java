@@ -1,10 +1,10 @@
 package com.unicon.api.obra.service;
 
-import com.unicon.api.obra.beans.ContactoBean;
-import com.unicon.api.obra.beans.FrenteBean;
-import com.unicon.api.obra.beans.ObraBean;
-import com.unicon.api.obra.beans.ResponseContactoBean;
-import com.unicon.api.obra.beans.ResponseObraBean;
+import com.unicon.api.commons.beans.obra.ObraBean;
+import com.unicon.api.commons.beans.obra.ObraContactoBean;
+import com.unicon.api.commons.beans.obra.ObraFrenteBean;
+import com.unicon.api.commons.beans.obra.ResponseObraBean;
+import com.unicon.api.commons.beans.obra.ResponseObraContactoBean;
 
 public interface IObraService {
 
@@ -12,11 +12,11 @@ public interface IObraService {
 
     ResponseObraBean actualizarObra(ObraBean obra);
 
-    ResponseContactoBean crearObraContacto(ContactoBean contacto);
+    ResponseObraContactoBean crearObraContacto(ObraContactoBean contacto);
 
-    ResponseContactoBean actualizarObraContacto(ContactoBean contacto);
+    ResponseObraContactoBean actualizarObraContacto(ObraContactoBean contacto);
 
-    ResponseObraBean crearObraFrente(FrenteBean frente);
+    ResponseObraBean crearObraFrente(ObraFrenteBean frente);
 
-    ResponseObraBean actualizarObraFrente(FrenteBean frente);
+    ResponseObraBean actualizarObraFrente(ObraFrenteBean frente);
 }

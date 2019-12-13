@@ -1,8 +1,12 @@
 package com.unicon.api.obra.dao;
 
+import com.unicon.api.commons.beans.obra.ObraBean;
+import com.unicon.api.commons.beans.obra.ObraContactoBean;
+import com.unicon.api.commons.beans.obra.ObraFrenteBean;
+import com.unicon.api.commons.beans.obra.ResponseObraBean;
+import com.unicon.api.commons.beans.obra.ResponseObraContactoBean;
 import com.unicon.api.commons.db.dao.DaoApplication;
 import com.unicon.api.commons.db.dao.enums.EConnectionType;
-import com.unicon.api.obra.beans.*;
 import com.unicon.api.obra.mapper.IObraMapper;
 import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.Logger;
@@ -38,11 +42,11 @@ public class ObraDao extends DaoApplication<ObraBean, IObraMapper> {
         return executeDml("registrarObra", obra);
     }
 
-    public ResponseContactoBean registrarObraContacto(ContactoBean contacto) {
+    public ResponseObraContactoBean registrarObraContacto(ObraContactoBean contacto) {
         return executeDml("registrarObraContacto", contacto);
     }
 
-    public ResponseObraBean registrarObraFrente(FrenteBean frente) {
+    public ResponseObraBean registrarObraFrente(ObraFrenteBean frente) {
         return executeDml("registrarObraFrente", frente);
     }
 
