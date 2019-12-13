@@ -3,7 +3,7 @@
 <mapper namespace="com.unicon.api.obra.mapper.IObraMapper">
 
     <!--@since 20191210 ACRISPIN | Mapper para obras-->
-    <resultMap id="selectResultTypeObraMap" type="com.unicon.api.commons.beans.response.ResponseObraBean">
+    <resultMap id="selectResultTypeObraMap" type="com.unicon.api.commons.beans.obra.ResponseObraBean">
         <result property="estado" column="status"/>
         <result property="codigo" column="codigo"/>
         <result property="resultado" column="resultado"/>
